@@ -1,0 +1,38 @@
+{
+  "existing": {
+    "detect": {
+      "DETECT00": {
+        "ai_probability": 50,
+        "confidence": 51,
+        "human_probability": 52,
+        "is_ai": false,
+        "text": "s36"
+      },
+      "DETECT01": {
+        "ai_probability": 100,
+        "confidence": 101,
+        "human_probability": 102,
+        "is_ai": false,
+        "text": "s68"
+      },
+      "DETECT02": {
+        "ai_probability": 150,
+        "confidence": 151,
+        "human_probability": 152,
+        "is_ai": false,
+        "text": "s9a"
+      }
+    }
+  },
+  "new": {
+    "detect": {
+      "detect_ref01": {
+        "ai_probability": 200,
+        "confidence": 201,
+        "human_probability": 202,
+        "is_ai": false,
+        "text": "scc"
+      }
+    }
+  }
+}

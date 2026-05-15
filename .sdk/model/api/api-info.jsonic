@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://api.checktica.com/v1/docs"
+      }
+      description: "Checktica API detects if a text was written by AI or a human with over 99% accuracy. It is free to use, requires no API key, and has no text length limitations."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://api.checktica.com/v1"
+        }
+      ]
+      title: "Checktica API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

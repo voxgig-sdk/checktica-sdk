@@ -1,0 +1,138 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Checktica API",
+    "description": "Checktica API detects if a text was written by AI or a human with over 99% accuracy. It is free to use, requires no API key, and has no text length limitations.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://api.checktica.com/v1/docs"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.checktica.com/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/detect": {
+      "post": {
+        "summary": "Detect AI-generated text",
+        "description": "Analyzes the provided text to determine if it was written by AI or a human with over 99% accuracy",
+        "operationId": "detectAiText",
+        "tags": [
+          "Detection"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "text"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "The text to analyze for AI detection. No length limitations.",
+                    "example": "This is a sample text that needs to be analyzed to determine if it was written by AI or a human."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful detection response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "isAI": {
+                      "type": "boolean",
+                      "description": "Indicates whether the text was identified as AI-generated"
+                    },
+                    "confidence": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "Confidence score of the detection (0-1)",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "aiProbability": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "Probability that the text is AI-generated (0-100)",
+                      "minimum": 0,
+                      "maximum": 100
+                    },
+                    "humanProbability": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "Probability that the text is human-written (0-100)",
+                      "minimum": 0,
+                      "maximum": 100
+                    }
+                  }
+                },
+                "example": {
+                  "isAI": true,
+                  "confidence": 0.99,
+                  "aiProbability": 99.2,
+                  "humanProbability": 0.8
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message describing what went wrong"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Text field is required"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "An internal error occurred while processing your request"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Detection",
+      "description": "AI text detection operations"
+    }
+  ]
+}

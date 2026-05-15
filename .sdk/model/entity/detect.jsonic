@@ -1,0 +1,57 @@
+# Entity: detect
+
+main: kit: entity: detect: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "ai_probability"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "confidence"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "human_probability"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "is_ai"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "text"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "detect"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/detect"
+          parts: [
+            "detect"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
