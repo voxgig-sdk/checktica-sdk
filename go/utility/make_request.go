@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/checktica-sdk/core"
+import "github.com/voxgig-sdk/checktica-sdk/go/core"
 
 func makeRequestUtil(ctx *core.Context) (*core.Response, error) {
 	if ctx.Out["request"] != nil {

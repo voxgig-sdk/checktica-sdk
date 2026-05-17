@@ -1,9 +1,9 @@
 package utility
 
 import (
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/checktica-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/checktica-sdk/core"
+	"github.com/voxgig-sdk/checktica-sdk/go/core"
 )
 
 func prepareHeadersUtil(ctx *core.Context) map[string]any {

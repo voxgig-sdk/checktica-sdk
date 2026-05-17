@@ -1,10 +1,10 @@
 package voxgigcheckticasdk
 
 import (
-	"github.com/voxgig-sdk/checktica-sdk/core"
-	"github.com/voxgig-sdk/checktica-sdk/entity"
-	"github.com/voxgig-sdk/checktica-sdk/feature"
-	_ "github.com/voxgig-sdk/checktica-sdk/utility"
+	"github.com/voxgig-sdk/checktica-sdk/go/core"
+	"github.com/voxgig-sdk/checktica-sdk/go/entity"
+	"github.com/voxgig-sdk/checktica-sdk/go/feature"
+	_ "github.com/voxgig-sdk/checktica-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

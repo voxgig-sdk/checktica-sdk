@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/checktica-sdk"
-	"github.com/voxgig-sdk/checktica-sdk/core"
+	sdk "github.com/voxgig-sdk/checktica-sdk/go"
+	"github.com/voxgig-sdk/checktica-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/checktica-sdk/go/utility/struct"
 )
 
 func TestDetectEntity(t *testing.T) {

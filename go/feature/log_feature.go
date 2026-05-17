@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/checktica-sdk/core"
+	"github.com/voxgig-sdk/checktica-sdk/go/core"
 )
 
 type LogFeature struct {

@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/checktica-sdk/core"
+	"github.com/voxgig-sdk/checktica-sdk/go/core"
 )
 
 type BaseFeature struct {
