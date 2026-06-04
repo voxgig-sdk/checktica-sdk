@@ -87,7 +87,6 @@ def _detect_basic_setup(extra):
         "CHECKTICA_TEST_DETECT_ENTID": idmap,
         "CHECKTICA_TEST_LIVE": "FALSE",
         "CHECKTICA_TEST_EXPLAIN": "FALSE",
-        "CHECKTICA_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -98,7 +97,6 @@ def _detect_basic_setup(extra):
     if env.get("CHECKTICA_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("CHECKTICA_APIKEY"),
             },
             extra or {},
         ])

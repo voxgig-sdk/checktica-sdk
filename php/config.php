@@ -20,9 +20,6 @@ class CheckticaConfig
             ],
             "options" => [
                 "base" => "https://api.checktica.com/v1",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
