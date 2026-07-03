@@ -10,7 +10,7 @@ The PHP SDK for the Checktica API — an entity-oriented client using PHP conven
 
 ## Install
 ```bash
-composer require voxgig/checktica-sdk
+composer require voxgig-sdk/checktica
 ```
 
 

@@ -10,7 +10,7 @@ The TypeScript SDK for the Checktica API — a type-safe, entity-oriented client
 
 ## Install
 ```bash
-npm install checktica
+npm install @voxgig-sdk/checktica
 ```
 ## Tutorial: your first API call
 

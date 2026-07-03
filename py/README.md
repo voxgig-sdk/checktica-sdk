@@ -10,7 +10,7 @@ The Python SDK for the Checktica API — an entity-oriented client following Pyt
 
 ## Install
 ```bash
-pip install checktica-sdk
+pip install voxgig-sdk-checktica
 ```
 
 Or install from source:

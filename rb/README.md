@@ -10,13 +10,13 @@ The Ruby SDK for the Checktica API — an entity-oriented client using idiomatic
 
 ## Install
 ```bash
-gem install checktica-sdk
+gem install voxgig-sdk-checktica
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "checktica-sdk"
+gem "voxgig-sdk-checktica"
 ```
 
 Then run:
