@@ -14,6 +14,9 @@ func MakeConfig() map[string]any {
 		},
 		"options": map[string]any{
 			"base": "https://api.checktica.com/v1",
+			"auth": map[string]any{
+				"prefix": "Bearer",
+			},
 			"headers": map[string]any{
 				"content-type": "application/json",
 			},
@@ -25,63 +28,63 @@ func MakeConfig() map[string]any {
 			"detect": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"active": true,
 						"name": "ai_probability",
 						"req": false,
 						"type": "`$NUMBER`",
-						"active": true,
 						"index$": 0,
 					},
 					map[string]any{
+						"active": true,
 						"name": "confidence",
 						"req": false,
 						"type": "`$NUMBER`",
-						"active": true,
 						"index$": 1,
 					},
 					map[string]any{
+						"active": true,
 						"name": "human_probability",
 						"req": false,
 						"type": "`$NUMBER`",
-						"active": true,
 						"index$": 2,
 					},
 					map[string]any{
+						"active": true,
 						"name": "is_ai",
 						"req": false,
 						"type": "`$BOOLEAN`",
-						"active": true,
 						"index$": 3,
 					},
 					map[string]any{
+						"active": true,
 						"name": "text",
 						"req": true,
 						"type": "`$STRING`",
-						"active": true,
 						"index$": 4,
 					},
 				},
 				"name": "detect",
 				"op": map[string]any{
 					"create": map[string]any{
+						"input": "data",
 						"name": "create",
 						"points": []any{
 							map[string]any{
+								"active": true,
+								"args": map[string]any{},
 								"method": "POST",
 								"orig": "/detect",
 								"parts": []any{
 									"detect",
 								},
+								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"active": true,
-								"args": map[string]any{},
-								"select": map[string]any{},
 								"index$": 0,
 							},
 						},
-						"input": "data",
 						"key$": "create",
 					},
 				},

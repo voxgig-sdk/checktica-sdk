@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'CHECKTICA_TEST_DETECT_ENTID': idmap,
     'CHECKTICA_TEST_LIVE': 'FALSE',
     'CHECKTICA_TEST_EXPLAIN': 'FALSE',
+    'CHECKTICA_APIKEY': 'NONE',
   })
 
   idmap = env['CHECKTICA_TEST_DETECT_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new CheckticaSDK(merge([
       {
+        apikey: env.CHECKTICA_APIKEY,
       },
       extra
     ]))

@@ -110,6 +110,7 @@ func detectBasicSetup(extra map[string]any) *entityTestSetup {
 		"CHECKTICA_TEST_DETECT_ENTID": idmap,
 		"CHECKTICA_TEST_LIVE":      "FALSE",
 		"CHECKTICA_TEST_EXPLAIN":   "FALSE",
+		"CHECKTICA_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["CHECKTICA_TEST_DETECT_ENTID"])
@@ -120,6 +121,7 @@ func detectBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["CHECKTICA_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["CHECKTICA_APIKEY"],
 			},
 			extra,
 		})

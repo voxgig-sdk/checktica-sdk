@@ -80,6 +80,7 @@ function detect_basic_setup($extra)
         "CHECKTICA_TEST_DETECT_ENTID" => $idmap,
         "CHECKTICA_TEST_LIVE" => "FALSE",
         "CHECKTICA_TEST_EXPLAIN" => "FALSE",
+        "CHECKTICA_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -91,6 +92,7 @@ function detect_basic_setup($extra)
     if ($env["CHECKTICA_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["CHECKTICA_APIKEY"],
             ],
             $extra ?? [],
         ]);

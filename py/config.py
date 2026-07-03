@@ -15,6 +15,9 @@ def make_config():
         },
         "options": {
             "base": "https://api.checktica.com/v1",
+            "auth": {
+                "prefix": "Bearer",
+            },
             "headers": {
         "content-type": "application/json",
       },
@@ -26,63 +29,63 @@ def make_config():
       "detect": {
         "fields": [
           {
+            "active": True,
             "name": "ai_probability",
             "req": False,
             "type": "`$NUMBER`",
-            "active": True,
             "index$": 0,
           },
           {
+            "active": True,
             "name": "confidence",
             "req": False,
             "type": "`$NUMBER`",
-            "active": True,
             "index$": 1,
           },
           {
+            "active": True,
             "name": "human_probability",
             "req": False,
             "type": "`$NUMBER`",
-            "active": True,
             "index$": 2,
           },
           {
+            "active": True,
             "name": "is_ai",
             "req": False,
             "type": "`$BOOLEAN`",
-            "active": True,
             "index$": 3,
           },
           {
+            "active": True,
             "name": "text",
             "req": True,
             "type": "`$STRING`",
-            "active": True,
             "index$": 4,
           },
         ],
         "name": "detect",
         "op": {
           "create": {
+            "input": "data",
             "name": "create",
             "points": [
               {
+                "active": True,
+                "args": {},
                 "method": "POST",
                 "orig": "/detect",
                 "parts": [
                   "detect",
                 ],
+                "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
-                "args": {},
-                "select": {},
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "create",
           },
         },

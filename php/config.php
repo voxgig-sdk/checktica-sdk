@@ -20,6 +20,9 @@ class CheckticaConfig
             ],
             "options" => [
                 "base" => "https://api.checktica.com/v1",
+                "auth" => [
+                    "prefix" => "Bearer",
+                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
@@ -31,63 +34,63 @@ class CheckticaConfig
         'detect' => [
           'fields' => [
             [
+              'active' => true,
               'name' => 'ai_probability',
               'req' => false,
               'type' => '`$NUMBER`',
-              'active' => true,
               'index$' => 0,
             ],
             [
+              'active' => true,
               'name' => 'confidence',
               'req' => false,
               'type' => '`$NUMBER`',
-              'active' => true,
               'index$' => 1,
             ],
             [
+              'active' => true,
               'name' => 'human_probability',
               'req' => false,
               'type' => '`$NUMBER`',
-              'active' => true,
               'index$' => 2,
             ],
             [
+              'active' => true,
               'name' => 'is_ai',
               'req' => false,
               'type' => '`$BOOLEAN`',
-              'active' => true,
               'index$' => 3,
             ],
             [
+              'active' => true,
               'name' => 'text',
               'req' => true,
               'type' => '`$STRING`',
-              'active' => true,
               'index$' => 4,
             ],
           ],
           'name' => 'detect',
           'op' => [
             'create' => [
+              'input' => 'data',
               'name' => 'create',
               'points' => [
                 [
+                  'active' => true,
+                  'args' => [],
                   'method' => 'POST',
                   'orig' => '/detect',
                   'parts' => [
                     'detect',
                   ],
+                  'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'active' => true,
-                  'args' => [],
-                  'select' => [],
                   'index$' => 0,
                 ],
               ],
-              'input' => 'data',
               'key$' => 'create',
             ],
           ],
