@@ -109,7 +109,7 @@ Alias for `CheckticaSDK.test()`.
 ## DetectEntity
 
 ```ts
-const detect = client.detect
+const detect = client.Detect()
 ```
 
 ### Fields
@@ -129,7 +129,7 @@ const detect = client.detect
 Create a new entity with the given data.
 
 ```ts
-const result = await client.detect.create({
+const result = await client.Detect().create({
   text: /* `$STRING` */,
 })
 ```

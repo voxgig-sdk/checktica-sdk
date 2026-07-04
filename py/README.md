@@ -34,8 +34,8 @@ client = CheckticaSDK()
 ### 4. Create, update, and remove
 
 ```python
-# Create
-created = client.detect.create({"name": "Example"})
+# Create — returns the bare created record (a dict)
+created = client.Detect().create({"name": "Example"})
 
 ```
 
@@ -82,8 +82,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = CheckticaSDK.test()
 
-result = client.detect.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+detect = client.Detect().load({"id": "test01"})
+# detect contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -220,7 +221,7 @@ API path: `/detect`
 
 ### Detect
 
-Create an instance: `const detect = client.detect`
+Create an instance: `detect = client.Detect()`
 
 #### Operations
 
@@ -240,9 +241,9 @@ Create an instance: `const detect = client.detect`
 
 #### Example: Create
 
-```ts
-const detect = await client.detect.create({
-  text: /* `$STRING` */,
+```python
+detect = client.Detect().create({
+    "text": ...,  # `$STRING`
 })
 ```
 
@@ -317,7 +318,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-detect = client.detect
+detect = client.Detect()
 detect.load({"id": "example_id"})
 
 # detect.data_get() now returns the loaded detect data

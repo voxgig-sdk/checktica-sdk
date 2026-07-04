@@ -233,10 +233,10 @@ class CheckticaSDK
 
     private $_detect = null;
 
-    // Idiomatic facade: $client->detect()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Detect() (PHP method
-    // names are case-insensitive).
-    public function detect($data = null)
+    // Canonical facade: $client->Detect()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->detect()
+    // resolves here too.
+    public function Detect($data = null)
     {
         require_once __DIR__ . '/entity/detect_entity.php';
         if ($data === null) {

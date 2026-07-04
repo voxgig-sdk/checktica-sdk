@@ -204,14 +204,7 @@ class CheckticaSDK {
 
 
 
-  _detect?: DetectEntity
-
-  // Idiomatic facade: `client.detect.list()` / `client.detect.load({ id })`.
-  get detect(): DetectEntity {
-    return (this._detect ??= new DetectEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.detect` instead. */
+  // Entity access: `client.Detect().list()` / `client.Detect().load({ id })`.
   Detect(data?: any) {
     const self = this
     return new DetectEntity(self,data)

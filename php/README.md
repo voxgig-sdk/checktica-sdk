@@ -32,8 +32,8 @@ $client = new CheckticaSDK();
 ### 4. Create, update, and remove
 
 ```php
-// Create
-$created = $client->detect()->create(["name" => "Example"]);
+// create() returns the bare created Detect record.
+$created = $client->Detect()->create(["name" => "Example"]);
 
 ```
 
@@ -78,13 +78,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = CheckticaSDK::test();
+$client = CheckticaSDK::test([
+    "entity" => ["detect" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->detect()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$detect = $client->Detect()->load(["id" => "test01"]);
+print_r($detect);
 ```
 
 ### Use a custom fetch function
@@ -224,7 +228,7 @@ API path: `/detect`
 
 ### Detect
 
-Create an instance: `const detect = client.detect`
+Create an instance: `$detect = $client->Detect();`
 
 #### Operations
 
@@ -244,10 +248,10 @@ Create an instance: `const detect = client.detect`
 
 #### Example: Create
 
-```ts
-const detect = await client.detect.create({
-  text: /* `$STRING` */,
-})
+```php
+$detect = $client->Detect()->create([
+    "text" => null, // `$STRING`
+]);
 ```
 
 
@@ -322,7 +326,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$detect = $client->detect();
+$detect = $client->Detect();
 $detect->load(["id" => "example_id"]);
 
 // $detect->dataGet() now returns the loaded detect data

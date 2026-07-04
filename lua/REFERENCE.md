@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## DetectEntity
 
 ```lua
-local detect = client:detect(nil)
+local detect = client:Detect(nil)
 ```
 
 ### Fields
@@ -103,7 +103,7 @@ local detect = client:detect(nil)
 Create a new entity with the given data.
 
 ```lua
-local result, err = client:detect():create({
+local result, err = client:Detect():create({
   text = --[[ `$STRING` ]],
 })
 ```

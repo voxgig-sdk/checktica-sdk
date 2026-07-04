@@ -128,22 +128,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = CheckticaSDK.test()
-const result = await client.detect.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const detect = await client.Detect().load({ id: 'test01' })
+// detect is a bare Detect populated with mock data
+console.log(detect)
 ```
 
 ### Python
 
 ```python
 client = CheckticaSDK.test()
-result = client.detect.load({"id": "test01"})
+detect = client.Detect().load({"id": "test01"})
+print(detect)
 ```
 
 ### PHP
 
 ```php
-$client = CheckticaSDK::test();
-$result = $client->detect()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = CheckticaSDK::test([
+    "entity" => ["detect" => ["test01" => ["id" => "test01"]]],
+]);
+$detect = $client->Detect()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -158,15 +163,18 @@ result, err := client.Detect(nil).Load(
 ### Ruby
 
 ```ruby
-client = CheckticaSDK.test
-result = client.detect.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = CheckticaSDK.test({
+  "entity" => { "detect" => { "test01" => { "id" => "test01" } } },
+})
+detect = client.Detect.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:detect():load({ id = "test01" })
+local result, err = client:Detect():load({ id = "test01" })
 ```
 
 ## How it works
@@ -214,6 +222,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

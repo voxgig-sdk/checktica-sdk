@@ -31,8 +31,8 @@ client = CheckticaSDK.new
 ### 4. Create, update, and remove
 
 ```ruby
-# Create
-created = client.detect.create({ "name" => "Example" })
+# create returns the bare created Detect record.
+created = client.Detect.create({ "name" => "Example" })
 
 ```
 
@@ -77,13 +77,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = CheckticaSDK.test
+client = CheckticaSDK.test({
+  "entity" => { "detect" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.detect.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+detect = client.Detect.load({ "id" => "test01" })
+puts detect
 ```
 
 ### Use a custom fetch function
@@ -219,7 +223,7 @@ API path: `/detect`
 
 ### Detect
 
-Create an instance: `const detect = client.detect`
+Create an instance: `detect = client.Detect`
 
 #### Operations
 
@@ -239,9 +243,9 @@ Create an instance: `const detect = client.detect`
 
 #### Example: Create
 
-```ts
-const detect = await client.detect.create({
-  text: /* `$STRING` */,
+```ruby
+detect = client.Detect.create({
+  "text" => nil, # `$STRING`
 })
 ```
 
@@ -317,7 +321,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-detect = client.detect
+detect = client.Detect
 detect.load({ "id" => "example_id" })
 
 # detect.data_get now returns the loaded detect data

@@ -208,13 +208,7 @@ class CheckticaSDK
   end
 
 
-  # Idiomatic facade: client.detect.list / client.detect.load({ "id" => ... })
-  def detect
-    require_relative 'entity/detect_entity'
-    @detect ||= DetectEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.detect instead.
+  # Canonical facade: client.Detect.list / client.Detect.load({ "id" => ... })
   def Detect(data = nil)
     require_relative 'entity/detect_entity'
     DetectEntity.new(self, data)

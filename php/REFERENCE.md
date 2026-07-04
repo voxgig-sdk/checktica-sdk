@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## DetectEntity
 
 ```php
-$detect = $client->detect();
+$detect = $client->Detect();
 ```
 
 ### Fields
@@ -105,7 +105,7 @@ $detect = $client->detect();
 Create a new entity with the given data. Throws on error.
 
 ```php
-$result = $client->detect()->create([
+$result = $client->Detect()->create([
   "text" => /* `$STRING` */,
 ]);
 ```

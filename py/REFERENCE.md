@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## DetectEntity
 
 ```python
-detect = client.detect
+detect = client.Detect()
 ```
 
 ### Fields
@@ -100,8 +100,8 @@ detect = client.detect
 Create a new entity with the given data. Returns the created entity data and raises on error.
 
 ```python
-result = client.detect.create({
-    "text": # `$STRING`,
+result = client.Detect().create({
+    "text": ...,  # `$STRING`
 })
 ```
 

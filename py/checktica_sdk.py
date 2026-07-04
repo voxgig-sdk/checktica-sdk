@@ -220,25 +220,15 @@ class CheckticaSDK:
         }
 
 
-    @property
-    def detect(self):
-        """Idiomatic facade: client.detect.list() / client.detect.load({"id": ...})."""
-        from entity.detect_entity import DetectEntity
-        cached = getattr(self, "_detect", None)
-        if cached is None:
-            cached = DetectEntity(self, None)
-            self._detect = cached
-        return cached
-
-    def Detect(self, data=None):
-        # Deprecated: use client.detect instead.
+    def Detect(self, data=None) -> "DetectEntity":
+        """Entity factory: client.Detect().list({}) / client.Detect().load({"id": ...})."""
         from entity.detect_entity import DetectEntity
         return DetectEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "CheckticaSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class CheckticaSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.detect_entity import DetectEntity

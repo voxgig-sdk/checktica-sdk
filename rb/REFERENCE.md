@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## DetectEntity
 
 ```ruby
-detect = client.detect
+detect = client.Detect
 ```
 
 ### Fields
@@ -106,7 +106,7 @@ detect = client.detect
 Create a new entity with the given data. Raises on error.
 
 ```ruby
-result = client.detect.create({
+result = client.Detect.create({
   "text" => # `$STRING`,
 })
 ```
