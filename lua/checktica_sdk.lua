@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:detect():list() / client:detect():load({ id = ... })
+function CheckticaSDK:detect(data)
+  local EntityMod = require("entity.detect_entity")
+  if data == nil then
+    if self._detect == nil then
+      self._detect = EntityMod.new(self, nil)
+    end
+    return self._detect
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:detect() instead.
 function CheckticaSDK:Detect(data)
   local EntityMod = require("entity.detect_entity")
   return EntityMod.new(self, data)

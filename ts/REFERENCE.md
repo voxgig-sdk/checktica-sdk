@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -110,7 +109,7 @@ Alias for `CheckticaSDK.test()`.
 ## DetectEntity
 
 ```ts
-const detect = client.Detect()
+const detect = client.detect
 ```
 
 ### Fields
@@ -130,7 +129,7 @@ const detect = client.Detect()
 Create a new entity with the given data.
 
 ```ts
-const result = await client.Detect().create({
+const result = await client.detect.create({
   text: /* `$STRING` */,
 })
 ```

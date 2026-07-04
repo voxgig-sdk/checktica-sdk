@@ -245,6 +245,9 @@ func (sdk *CheckticaSDK) Direct(fetchargs map[string]any) (map[string]any, error
 }
 
 
+// Detect returns a Detect entity bound to this client.
+// Idiomatic usage: client.Detect(nil).List(nil, nil) or
+// client.Detect(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *CheckticaSDK) Detect(data map[string]any) CheckticaEntity {
 	return NewDetectEntityFunc(sdk, data)
 }

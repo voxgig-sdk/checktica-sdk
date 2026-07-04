@@ -9,12 +9,9 @@ The Lua SDK for the Checktica API — an entity-oriented client using Lua conven
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-checktica
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/checktica-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,16 +28,14 @@ loading a specific record.
 ```lua
 local sdk = require("checktica_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("CHECKTICA_APIKEY"),
-})
+local client = sdk.new()
 ```
 
 ### 4. Create, update, and remove
 
 ```lua
 -- Create
-local created, _ = client:Detect():create({ name = "Example" })
+local created, _ = client:detect():create({ name = "Example" })
 
 ```
 
@@ -87,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Checktica():load({ id = "test01" })
+local result, err = client:detect():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -121,7 +116,6 @@ Create a `.env.local` file at the project root:
 
 ```
 CHECKTICA_TEST_LIVE=TRUE
-CHECKTICA_APIKEY=<your-key>
 ```
 
 Then run:
@@ -144,7 +138,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -225,7 +218,7 @@ API path: `/detect`
 
 ### Detect
 
-Create an instance: `const detect = client.Detect()`
+Create an instance: `const detect = client.detect`
 
 #### Operations
 
@@ -246,7 +239,7 @@ Create an instance: `const detect = client.Detect()`
 #### Example: Create
 
 ```ts
-const detect = await client.Detect().create({
+const detect = await client.detect.create({
   text: /* `$STRING` */,
 })
 ```
@@ -323,11 +316,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local detect = client:detect()
+detect:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- detect:data_get() now returns the loaded detect data
+-- detect:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

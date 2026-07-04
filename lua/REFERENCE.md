@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -84,7 +83,7 @@ same parameters as `direct()`.
 ## DetectEntity
 
 ```lua
-local detect = client:Detect(nil)
+local detect = client:detect(nil)
 ```
 
 ### Fields
@@ -104,7 +103,7 @@ local detect = client:Detect(nil)
 Create a new entity with the given data.
 
 ```lua
-local result, err = client:Detect():create({
+local result, err = client:detect():create({
   text = --[[ `$STRING` ]],
 })
 ```

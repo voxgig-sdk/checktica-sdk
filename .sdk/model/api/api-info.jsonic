@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         url: "https://api.checktica.com/v1/docs"
       }

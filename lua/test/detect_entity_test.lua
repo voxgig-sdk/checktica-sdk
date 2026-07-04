@@ -86,7 +86,6 @@ function detect_basic_setup(extra)
     ["CHECKTICA_TEST_DETECT_ENTID"] = idmap,
     ["CHECKTICA_TEST_LIVE"] = "FALSE",
     ["CHECKTICA_TEST_EXPLAIN"] = "FALSE",
-    ["CHECKTICA_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -98,7 +97,6 @@ function detect_basic_setup(extra)
   if env["CHECKTICA_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["CHECKTICA_APIKEY"],
       },
       extra or {},
     })

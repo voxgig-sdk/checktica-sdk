@@ -45,6 +45,7 @@ class DetectEntity
     end
   end
 
+  # @return [Detect, Hash] the current Detect data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class DetectEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Detect fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -67,6 +69,11 @@ class DetectEntity
   
 
   
+  # Create a new Detect.
+  #
+  # @param reqdata [DetectCreateData, Hash, nil] body data
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Detect, Hash] the created Detect; raises CheckticaError on failure
   def create(reqdata, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

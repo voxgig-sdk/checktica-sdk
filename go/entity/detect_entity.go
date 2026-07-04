@@ -85,6 +85,27 @@ func (e *DetectEntity) Match(args ...any) any {
 	return out
 }
 
+// DataTyped is the statically-typed accessor for this entity's data. With no
+// argument it returns the current data as an Detect; with an argument it
+// sets the data and returns the stored value. It delegates to the untyped Data
+// (identical runtime) and converts at the typed boundary.
+func (e *DetectEntity) DataTyped(data ...Detect) Detect {
+	if len(data) > 0 {
+		return typedFrom[Detect](e.Data(asMap(data[0])))
+	}
+	return typedFrom[Detect](e.Data())
+}
+
+// MatchTyped mirrors DataTyped for the entity's match filter. The match is a
+// partial of the entity, so it round-trips through Detect (all fields
+// optional at the wire level).
+func (e *DetectEntity) MatchTyped(match ...Detect) Detect {
+	if len(match) > 0 {
+		return typedFrom[Detect](e.Match(asMap(match[0])))
+	}
+	return typedFrom[Detect](e.Match())
+}
+
 func (e *DetectEntity) Load(_ map[string]any, _ map[string]any) (any, error) {
 	return core.UnsupportedOp("load", e.name)
 }
@@ -116,6 +137,17 @@ func (e *DetectEntity) Create(reqdata map[string]any, ctrl map[string]any) (any,
 			}
 		}
 	})
+}
+
+// CreateTyped is the statically-typed variant of Create: it takes an
+// DetectCreateData and returns an Detect. It delegates to the untyped
+// Create (identical runtime) and converts at the typed boundary.
+func (e *DetectEntity) CreateTyped(reqdata DetectCreateData, ctrl map[string]any) (Detect, error) {
+	res, err := e.Create(asMap(reqdata), ctrl)
+	if err != nil {
+		return Detect{}, err
+	}
+	return typedFrom[Detect](res), nil
 }
 
 

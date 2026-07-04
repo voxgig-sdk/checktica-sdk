@@ -36,8 +36,7 @@ class DetectEntityTest < Minitest::Test
     detect_ref01_data = Helpers.to_map(Vs.getprop(
       Vs.getpath(setup[:data], "new.detect"), "detect_ref01"))
 
-    detect_ref01_data_result, err = detect_ref01_ent.create(detect_ref01_data, nil)
-    assert_nil err
+    detect_ref01_data_result = detect_ref01_ent.create(detect_ref01_data, nil)
     detect_ref01_data = Helpers.to_map(detect_ref01_data_result)
     assert !detect_ref01_data.nil?
 
@@ -77,7 +76,6 @@ def detect_basic_setup(extra)
     "CHECKTICA_TEST_DETECT_ENTID" => idmap,
     "CHECKTICA_TEST_LIVE" => "FALSE",
     "CHECKTICA_TEST_EXPLAIN" => "FALSE",
-    "CHECKTICA_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -89,7 +87,6 @@ def detect_basic_setup(extra)
   if env["CHECKTICA_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["CHECKTICA_APIKEY"],
       },
       extra || {},
     ])

@@ -2,6 +2,8 @@
 
 import { DetectEntity } from './entity/DetectEntity'
 
+export type * from './CheckticaTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class CheckticaSDK {
 
 
 
+  _detect?: DetectEntity
+
+  // Idiomatic facade: `client.detect.list()` / `client.detect.load({ id })`.
+  get detect(): DetectEntity {
+    return (this._detect ??= new DetectEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.detect` instead. */
   Detect(data?: any) {
     const self = this
     return new DetectEntity(self,data)

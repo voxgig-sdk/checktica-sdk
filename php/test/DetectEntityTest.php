@@ -43,8 +43,7 @@ class DetectEntityTest extends TestCase
         $detect_ref01_data = Helpers::to_map(Vs::getprop(
             Vs::getpath($setup["data"], "new.detect"), "detect_ref01"));
 
-        [$detect_ref01_data_result, $err] = $detect_ref01_ent->create($detect_ref01_data, null);
-        $this->assertNull($err);
+        $detect_ref01_data_result = $detect_ref01_ent->create($detect_ref01_data, null);
         $detect_ref01_data = Helpers::to_map($detect_ref01_data_result);
         $this->assertNotNull($detect_ref01_data);
 
@@ -80,7 +79,6 @@ function detect_basic_setup($extra)
         "CHECKTICA_TEST_DETECT_ENTID" => $idmap,
         "CHECKTICA_TEST_LIVE" => "FALSE",
         "CHECKTICA_TEST_EXPLAIN" => "FALSE",
-        "CHECKTICA_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -92,7 +90,6 @@ function detect_basic_setup($extra)
     if ($env["CHECKTICA_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["CHECKTICA_APIKEY"],
             ],
             $extra ?? [],
         ]);

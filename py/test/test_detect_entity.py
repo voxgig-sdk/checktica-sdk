@@ -44,9 +44,7 @@ class TestDetectEntity:
         detect_ref01_data = helpers.to_map(vs.getprop(
             vs.getpath(setup["data"], "new.detect"), "detect_ref01"))
 
-        detect_ref01_data_result, err = detect_ref01_ent.create(detect_ref01_data, None)
-        assert err is None
-        detect_ref01_data = helpers.to_map(detect_ref01_data_result)
+        detect_ref01_data = helpers.to_map(detect_ref01_ent.create(detect_ref01_data, None))
         assert detect_ref01_data is not None
 
 
@@ -87,7 +85,6 @@ def _detect_basic_setup(extra):
         "CHECKTICA_TEST_DETECT_ENTID": idmap,
         "CHECKTICA_TEST_LIVE": "FALSE",
         "CHECKTICA_TEST_EXPLAIN": "FALSE",
-        "CHECKTICA_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -98,7 +95,6 @@ def _detect_basic_setup(extra):
     if env.get("CHECKTICA_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("CHECKTICA_APIKEY"),
             },
             extra or {},
         ])

@@ -83,6 +83,10 @@ end
 
 
 
+---@param reqdata DetectCreateData
+---@param ctrl? table
+---@return Detect
+---@return string? err
 function DetectEntity:create(reqdata, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
