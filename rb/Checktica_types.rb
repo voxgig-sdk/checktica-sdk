@@ -33,7 +33,7 @@ Detect = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Detect#create (any subset of Detect fields).
+# Request payload for Detect#create.
 #
 # @!attribute [rw] ai_probability
 #   @return [Float, nil]
@@ -48,7 +48,7 @@ Detect = Struct.new(
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] text
-#   @return [String, nil]
+#   @return [String]
 DetectCreateData = Struct.new(
   :ai_probability,
   :confidence,

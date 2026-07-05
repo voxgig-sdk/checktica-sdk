@@ -87,11 +87,11 @@ detect = client.Detect()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_probability` | ``$NUMBER`` | No |  |
-| `confidence` | ``$NUMBER`` | No |  |
-| `human_probability` | ``$NUMBER`` | No |  |
-| `is_ai` | ``$BOOLEAN`` | No |  |
-| `text` | ``$STRING`` | Yes |  |
+| `ai_probability` | `float` | No |  |
+| `confidence` | `float` | No |  |
+| `human_probability` | `float` | No |  |
+| `is_ai` | `bool` | No |  |
+| `text` | `str` | Yes |  |
 
 ### Operations
 
@@ -101,7 +101,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.Detect().create({
-    "text": ...,  # `$STRING`
+    "text": "example",  # str
 })
 ```
 

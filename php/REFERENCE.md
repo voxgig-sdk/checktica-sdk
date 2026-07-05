@@ -45,11 +45,11 @@ $client = CheckticaSDK::test();
 
 Create a new `DetectEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): CheckticaUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,11 +92,11 @@ $detect = $client->Detect();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_probability` | ``$NUMBER`` | No |  |
-| `confidence` | ``$NUMBER`` | No |  |
-| `human_probability` | ``$NUMBER`` | No |  |
-| `is_ai` | ``$BOOLEAN`` | No |  |
-| `text` | ``$STRING`` | Yes |  |
+| `ai_probability` | `float` | No |  |
+| `confidence` | `float` | No |  |
+| `human_probability` | `float` | No |  |
+| `is_ai` | `bool` | No |  |
+| `text` | `string` | Yes |  |
 
 ### Operations
 
@@ -106,25 +106,25 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->Detect()->create([
-  "text" => /* `$STRING` */,
+  "text" => null, // string
 ]);
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -133,7 +133,7 @@ Set the entity match criteria.
 Create a new `DetectEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

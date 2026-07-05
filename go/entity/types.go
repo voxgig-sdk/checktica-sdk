@@ -17,14 +17,13 @@ type Detect struct {
 	Text string `json:"text"`
 }
 
-// DetectCreateData mirrors the detect fields as an all-optional match
-// filter (Go analog of Partial<Detect>).
+// DetectCreateData is the typed request payload for Detect.CreateTyped.
 type DetectCreateData struct {
 	AiProbability *float64 `json:"ai_probability,omitempty"`
 	Confidence *float64 `json:"confidence,omitempty"`
 	HumanProbability *float64 `json:"human_probability,omitempty"`
 	IsAi *bool `json:"is_ai,omitempty"`
-	Text *string `json:"text,omitempty"`
+	Text string `json:"text"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

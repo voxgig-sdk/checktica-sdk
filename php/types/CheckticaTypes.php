@@ -22,13 +22,13 @@ class Detect
     public string $text;
 }
 
-/** Match filter for Detect#create (any subset of Detect fields). */
+/** Request payload for Detect#create. */
 class DetectCreateData
 {
     public ?float $ai_probability = null;
     public ?float $confidence = null;
     public ?float $human_probability = null;
     public ?bool $is_ai = null;
-    public ?string $text = null;
+    public string $text;
 }
 

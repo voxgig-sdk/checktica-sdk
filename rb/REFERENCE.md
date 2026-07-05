@@ -8,7 +8,7 @@ Complete API reference for the Checktica Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'checktica_sdk'
+require_relative 'Checktica_sdk'
 
 client = CheckticaSDK.new(options)
 ```
@@ -93,11 +93,11 @@ detect = client.Detect
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_probability` | ``$NUMBER`` | No |  |
-| `confidence` | ``$NUMBER`` | No |  |
-| `human_probability` | ``$NUMBER`` | No |  |
-| `is_ai` | ``$BOOLEAN`` | No |  |
-| `text` | ``$STRING`` | Yes |  |
+| `ai_probability` | `Float` | No |  |
+| `confidence` | `Float` | No |  |
+| `human_probability` | `Float` | No |  |
+| `is_ai` | `Boolean` | No |  |
+| `text` | `String` | Yes |  |
 
 ### Operations
 
@@ -107,7 +107,7 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.Detect.create({
-  "text" => # `$STRING`,
+  "text" => "example", # String
 })
 ```
 

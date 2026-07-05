@@ -221,7 +221,7 @@ class CheckticaSDK:
 
 
     def Detect(self, data=None) -> "DetectEntity":
-        """Entity factory: client.Detect().list({}) / client.Detect().load({"id": ...})."""
+        """Entity factory: client.Detect().list() / client.Detect().load({"id": ...})."""
         from entity.detect_entity import DetectEntity
         return DetectEntity(self, data)
 

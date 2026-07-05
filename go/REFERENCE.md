@@ -97,11 +97,11 @@ detect := client.Detect(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_probability` | ``$NUMBER`` | No |  |
-| `confidence` | ``$NUMBER`` | No |  |
-| `human_probability` | ``$NUMBER`` | No |  |
-| `is_ai` | ``$BOOLEAN`` | No |  |
-| `text` | ``$STRING`` | Yes |  |
+| `ai_probability` | `float64` | No |  |
+| `confidence` | `float64` | No |  |
+| `human_probability` | `float64` | No |  |
+| `is_ai` | `bool` | No |  |
+| `text` | `string` | Yes |  |
 
 ### Operations
 
@@ -111,7 +111,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.Detect(nil).Create(map[string]any{
-    "text": /* `$STRING` */,
+    "text": /* string */,
 }, nil)
 ```
 

@@ -13,5 +13,11 @@ export interface Detect {
   text: string
 }
 
-export type DetectCreateData = Partial<Detect>
+export interface DetectCreateData {
+  ai_probability?: number
+  confidence?: number
+  human_probability?: number
+  is_ai?: boolean
+  text: string
+}
 

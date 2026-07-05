@@ -90,11 +90,11 @@ local detect = client:Detect(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_probability` | ``$NUMBER`` | No |  |
-| `confidence` | ``$NUMBER`` | No |  |
-| `human_probability` | ``$NUMBER`` | No |  |
-| `is_ai` | ``$BOOLEAN`` | No |  |
-| `text` | ``$STRING`` | Yes |  |
+| `ai_probability` | `number` | No |  |
+| `confidence` | `number` | No |  |
+| `human_probability` | `number` | No |  |
+| `is_ai` | `boolean` | No |  |
+| `text` | `string` | Yes |  |
 
 ### Operations
 
@@ -104,7 +104,7 @@ Create a new entity with the given data.
 
 ```lua
 local result, err = client:Detect():create({
-  text = --[[ `$STRING` ]],
+  text = --[[ string ]],
 })
 ```
 

@@ -27,9 +27,12 @@ class Detect(DetectRequired, total=False):
     is_ai: bool
 
 
-class DetectCreateData(TypedDict, total=False):
+class DetectCreateDataRequired(TypedDict):
+    text: str
+
+
+class DetectCreateData(DetectCreateDataRequired, total=False):
     ai_probability: float
     confidence: float
     human_probability: float
     is_ai: bool
-    text: str

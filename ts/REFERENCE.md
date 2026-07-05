@@ -116,11 +116,11 @@ const detect = client.Detect()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_probability` | ``$NUMBER`` | No |  |
-| `confidence` | ``$NUMBER`` | No |  |
-| `human_probability` | ``$NUMBER`` | No |  |
-| `is_ai` | ``$BOOLEAN`` | No |  |
-| `text` | ``$STRING`` | Yes |  |
+| `ai_probability` | `number` | No |  |
+| `confidence` | `number` | No |  |
+| `human_probability` | `number` | No |  |
+| `is_ai` | `boolean` | No |  |
+| `text` | `string` | Yes |  |
 
 ### Operations
 
@@ -130,7 +130,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.Detect().create({
-  text: /* `$STRING` */,
+  text: /* string */,
 })
 ```
 
