@@ -130,7 +130,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.Detect().create({
-  text: /* string */,
+  text: 'example_text',
 })
 ```
 

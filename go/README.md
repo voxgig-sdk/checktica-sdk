@@ -51,7 +51,7 @@ func main() {
     client := sdk.New()
 
     // Create a detect.
-    created, err := client.Detect(nil).Create(map[string]any{"text": "example"}, nil)
+    created, err := client.Detect(nil).Create(map[string]any{"text": "example_text"}, nil)
     if err != nil {
         panic(err)
     }
@@ -297,8 +297,12 @@ Create an instance: `detect := client.Detect(nil)`
 
 ```go
 result, err := client.Detect(nil).Create(map[string]any{
-    "text": /* string */,
+    "text": "example_text",
 }, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 

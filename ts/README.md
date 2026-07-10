@@ -320,7 +320,7 @@ Create an instance: `const detect = client.Detect()`
 
 ```ts
 const detect = await client.Detect().create({
-  text: /* string */,
+  text: 'example_text',
 })
 ```
 

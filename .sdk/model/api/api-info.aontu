@@ -15,9 +15,9 @@ main: {
           url: "https://api.checktica.com/v1"
         }
       ]
+      summary: "Checktica API detects if a text was written by AI or a human with over 99% accuracy."
       title: "Checktica API"
       version: "1.0.0"
+      website: "https://checktica.com"
     }
   }
-}
-

@@ -107,7 +107,7 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.Detect.create({
-  "text" => "example", # String
+  "text" => "example_text", # String
 })
 ```
 

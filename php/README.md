@@ -35,7 +35,7 @@ $client = new CheckticaSDK();
 
 ```php
 // create() returns the bare created Detect record.
-$created = $client->Detect()->create(["text" => "example"]);
+$created = $client->Detect()->create(["text" => "example_text"]);
 
 ```
 

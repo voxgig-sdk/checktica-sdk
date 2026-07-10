@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -209,14 +206,17 @@
           "url": "https://api.checktica.com/v1/docs"
         },
         "description": "Checktica API detects if a text was written by AI or a human with over 99% accuracy. It is free to use, requires no API key, and has no text length limitations.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://api.checktica.com/v1"
           }
         ],
+        "summary": "Checktica API detects if a text was written by AI or a human with over 99% accuracy.",
         "title": "Checktica API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://checktica.com"
       },
       "option": {},
       "target": {
@@ -269,6 +269,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -319,6 +322,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

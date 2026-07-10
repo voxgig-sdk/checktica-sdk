@@ -34,7 +34,7 @@ client = CheckticaSDK.new
 
 ```ruby
 # create returns the bare created Detect record.
-created = client.Detect.create({ "text" => "example" })
+created = client.Detect.create({ "text" => "example_text" })
 
 ```
 
@@ -269,7 +269,7 @@ Create an instance: `detect = client.Detect`
 
 ```ruby
 detect = client.Detect.create({
-  "text" => "example", # String
+  "text" => "example_text", # String
 })
 ```
 

@@ -40,7 +40,7 @@ client = CheckticaSDK()
 
 ```python
 # Create — returns the bare created record (a dict)
-created = client.Detect().create({"text": "example"})
+created = client.Detect().create({"text": "example_text"})
 
 ```
 
@@ -275,7 +275,7 @@ Create an instance: `detect = client.Detect()`
 
 ```python
 detect = client.Detect().create({
-    "text": "example",  # str
+    "text": "example_text",  # str
 })
 ```
 

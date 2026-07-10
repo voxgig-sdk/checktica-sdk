@@ -37,7 +37,7 @@ local client = sdk.new()
 
 ```lua
 -- Create
-local created, err = client:Detect():create({ text = "example" })
+local created, err = client:Detect():create({ text = "example_text" })
 if err then error(err) end
 
 ```
@@ -265,7 +265,7 @@ Create an instance: `local detect = client:Detect(nil)`
 
 ```lua
 local detect, err = client:Detect():create({
-  text = nil, -- string
+  text = "example_text", -- string
 })
 ```
 

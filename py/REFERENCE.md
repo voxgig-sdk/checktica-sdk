@@ -101,7 +101,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.Detect().create({
-    "text": "example",  # str
+    "text": "example_text",  # str
 })
 ```
 

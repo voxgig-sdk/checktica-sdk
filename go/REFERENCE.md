@@ -91,6 +91,7 @@ same parameters as `Direct()`.
 
 ```go
 detect := client.Detect(nil)
+fmt.Println(detect.GetName()) // "detect"
 ```
 
 ### Fields
@@ -111,8 +112,12 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.Detect(nil).Create(map[string]any{
-    "text": /* string */,
+    "text": "example_text",
 }, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
