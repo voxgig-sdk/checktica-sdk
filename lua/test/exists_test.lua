@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Checktica SDK exists test
 
 local sdk = require("checktica_sdk")
 
