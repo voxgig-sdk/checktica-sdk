@@ -15,20 +15,20 @@ declare(strict_types=1);
 /** Detect entity data model. */
 class Detect
 {
-    public ?float $ai_probability = null;
+    public ?float $aiProbability = null;
     public ?float $confidence = null;
-    public ?float $human_probability = null;
-    public ?bool $is_ai = null;
+    public ?float $humanProbability = null;
+    public ?bool $isAI = null;
     public string $text;
 }
 
 /** Request payload for Detect#create. */
 class DetectCreateData
 {
-    public ?float $ai_probability = null;
+    public ?float $aiProbability = null;
     public ?float $confidence = null;
-    public ?float $human_probability = null;
-    public ?bool $is_ai = null;
+    public ?float $humanProbability = null;
+    public ?bool $isAI = null;
     public string $text;
 }
 

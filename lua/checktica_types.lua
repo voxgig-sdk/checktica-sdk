@@ -7,17 +7,17 @@
 -- edit by hand.
 
 ---@class Detect
----@field ai_probability? number
+---@field aiProbability? number
 ---@field confidence? number
----@field human_probability? number
----@field is_ai? boolean
+---@field humanProbability? number
+---@field isAI? boolean
 ---@field text string
 
 ---@class DetectCreateData
----@field ai_probability? number
+---@field aiProbability? number
 ---@field confidence? number
----@field human_probability? number
----@field is_ai? boolean
+---@field humanProbability? number
+---@field isAI? boolean
 ---@field text string
 
 local M = {}

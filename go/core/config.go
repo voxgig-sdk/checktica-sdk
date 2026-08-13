@@ -26,7 +26,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "ai_probability",
+						"name": "aiProbability",
 						"req": false,
 						"type": "`$NUMBER`",
 						"index$": 0,
@@ -40,14 +40,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "human_probability",
+						"name": "humanProbability",
 						"req": false,
 						"type": "`$NUMBER`",
 						"index$": 2,
 					},
 					map[string]any{
 						"active": true,
-						"name": "is_ai",
+						"name": "isAI",
 						"req": false,
 						"type": "`$BOOLEAN`",
 						"index$": 3,
@@ -69,6 +69,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "POST",
 								"orig": "/detect",
 								"parts": []any{
@@ -82,7 +83,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{

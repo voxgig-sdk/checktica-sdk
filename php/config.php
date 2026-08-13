@@ -32,7 +32,7 @@ class CheckticaConfig
           'fields' => [
             [
               'active' => true,
-              'name' => 'ai_probability',
+              'name' => 'aiProbability',
               'req' => false,
               'type' => '`$NUMBER`',
               'index$' => 0,
@@ -46,14 +46,14 @@ class CheckticaConfig
             ],
             [
               'active' => true,
-              'name' => 'human_probability',
+              'name' => 'humanProbability',
               'req' => false,
               'type' => '`$NUMBER`',
               'index$' => 2,
             ],
             [
               'active' => true,
-              'name' => 'is_ai',
+              'name' => 'isAI',
               'req' => false,
               'type' => '`$BOOLEAN`',
               'index$' => 3,
@@ -75,6 +75,7 @@ class CheckticaConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/detect',
                   'parts' => [

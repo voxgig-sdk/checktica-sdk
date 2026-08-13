@@ -92,10 +92,10 @@ $detect = $client->Detect();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_probability` | `float` | No |  |
+| `aiProbability` | `float` | No |  |
 | `confidence` | `float` | No |  |
-| `human_probability` | `float` | No |  |
-| `is_ai` | `bool` | No |  |
+| `humanProbability` | `float` | No |  |
+| `isAI` | `bool` | No |  |
 | `text` | `string` | Yes |  |
 
 ### Operations

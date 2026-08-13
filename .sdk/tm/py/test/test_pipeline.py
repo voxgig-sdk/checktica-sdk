@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import CheckticaSDK
-from core.error import CheckticaError
-from core.result import CheckticaResult
-from core.response import CheckticaResponse
-from core.spec import CheckticaSpec
-from feature.base_feature import CheckticaBaseFeature
+from projectname_sdk.core.error import CheckticaError
+from projectname_sdk.core.result import CheckticaResult
+from projectname_sdk.core.response import CheckticaResponse
+from projectname_sdk.core.spec import CheckticaSpec
+from projectname_sdk.feature.base_feature import CheckticaBaseFeature
 
 
 def _client():

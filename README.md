@@ -40,9 +40,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = CheckticaSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = CheckticaSDK.test({
+  entity: {
+    detect: {
+      test01: { id: 'test01', text: 'example_text' },
+    },
+  },
+})
 const detect = await client.Detect().create({ text: 'example_text' })
-// detect is a bare Detect populated with mock data
+// detect is the Detect entity, populated with mock data
+// — call detect.data() for the record itself
 console.log(detect)
 ```
 
@@ -321,6 +330,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://api.checktica.com/v1/docs](https://api.checktica.com/v1/docs)
 

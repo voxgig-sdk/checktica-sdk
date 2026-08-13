@@ -258,10 +258,10 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"ai_probability"` |  |
+| `"aiProbability"` |  |
 | `"confidence"` |  |
-| `"human_probability"` |  |
-| `"is_ai"` |  |
+| `"humanProbability"` |  |
+| `"isAI"` |  |
 | `"text"` |  |
 
 Operations: Create.
@@ -287,10 +287,10 @@ Create an instance: `detect := client.Detect(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ai_probability` | `float64` |  |
+| `aiProbability` | `float64` |  |
 | `confidence` | `float64` |  |
-| `human_probability` | `float64` |  |
-| `is_ai` | `bool` |  |
+| `humanProbability` | `float64` |  |
+| `isAI` | `bool` |  |
 | `text` | `string` |  |
 
 #### Example: Create

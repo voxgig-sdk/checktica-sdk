@@ -37,7 +37,7 @@ class DetectEntityTest < Minitest::Test
       Vs.getpath(setup[:data], "new.detect"), "detect_ref01"))
 
     detect_ref01_data_result = detect_ref01_ent.create(detect_ref01_data, nil)
-    detect_ref01_data = Helpers.to_map(detect_ref01_data_result)
+    detect_ref01_data = Helpers.to_map(detect_ref01_data_result.respond_to?(:data_get) ? detect_ref01_data_result.data_get : detect_ref01_data_result)
     assert !detect_ref01_data.nil?
 
   end

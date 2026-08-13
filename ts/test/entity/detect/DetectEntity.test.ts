@@ -62,7 +62,7 @@ describe('DetectEntity', async () => {
     const detect_ref01_ent = client.Detect()
     let detect_ref01_data = setup.data.new.detect['detect_ref01']
 
-    detect_ref01_data = await detect_ref01_ent.create(detect_ref01_data)
+    detect_ref01_data = (await detect_ref01_ent.create(detect_ref01_data)).data()
     assert(null != detect_ref01_data)
 
 

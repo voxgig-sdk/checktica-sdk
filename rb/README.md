@@ -33,7 +33,7 @@ client = CheckticaSDK.new
 ### 4. Create, update, and remove
 
 ```ruby
-# create returns the bare created Detect record.
+# create returns the ENTITY — call data_get for the created Detect record.
 created = client.Detect.create({ "text" => "example_text" })
 
 ```
@@ -113,7 +113,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = CheckticaSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 detect = client.Detect.create({ "text" => "example" })
 puts detect
 ```
@@ -230,10 +231,10 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `ai_probability` |  |
+| `aiProbability` |  |
 | `confidence` |  |
-| `human_probability` |  |
-| `is_ai` |  |
+| `humanProbability` |  |
+| `isAI` |  |
 | `text` |  |
 
 Operations: Create.
@@ -259,10 +260,10 @@ Create an instance: `detect = client.Detect`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ai_probability` | `Float` |  |
+| `aiProbability` | `Float` |  |
 | `confidence` | `Float` |  |
-| `human_probability` | `Float` |  |
-| `is_ai` | `Boolean` |  |
+| `humanProbability` | `Float` |  |
+| `isAI` | `Boolean` |  |
 | `text` | `String` |  |
 
 #### Example: Create

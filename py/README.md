@@ -39,7 +39,7 @@ client = CheckticaSDK()
 ### 4. Create, update, and remove
 
 ```python
-# Create — returns the bare created record (a dict)
+# Create — returns the ENTITY (call data_get() for the record)
 created = client.Detect().create({"text": "example_text"})
 
 ```
@@ -118,7 +118,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = CheckticaSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 detect = client.Detect().create({"text": "example"})
 # detect contains the mock response record
 ```
@@ -214,7 +215,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -236,10 +237,10 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `ai_probability` |  |
+| `aiProbability` |  |
 | `confidence` |  |
-| `human_probability` |  |
-| `is_ai` |  |
+| `humanProbability` |  |
+| `isAI` |  |
 | `text` |  |
 
 Operations: Create.
@@ -265,10 +266,10 @@ Create an instance: `detect = client.Detect()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ai_probability` | `float` |  |
+| `aiProbability` | `float` |  |
 | `confidence` | `float` |  |
-| `human_probability` | `float` |  |
-| `is_ai` | `bool` |  |
+| `humanProbability` | `float` |  |
+| `isAI` | `bool` |  |
 | `text` | `str` |  |
 
 #### Example: Create

@@ -6,18 +6,18 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface Detect {
-  ai_probability?: number
+  aiProbability?: number
   confidence?: number
-  human_probability?: number
-  is_ai?: boolean
+  humanProbability?: number
+  isAI?: boolean
   text: string
 }
 
 export interface DetectCreateData {
-  ai_probability?: number
+  aiProbability?: number
   confidence?: number
-  human_probability?: number
-  is_ai?: boolean
+  humanProbability?: number
+  isAI?: boolean
   text: string
 }
 

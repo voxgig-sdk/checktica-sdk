@@ -213,9 +213,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local detect, err = client:Detect():load()
+    local detect, err = client:Detect():list()
     if err then error(err) end
-    -- detect is the loaded record
+    -- detect is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -226,10 +226,10 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `ai_probability` |  |
+| `aiProbability` |  |
 | `confidence` |  |
-| `human_probability` |  |
-| `is_ai` |  |
+| `humanProbability` |  |
+| `isAI` |  |
 | `text` |  |
 
 Operations: Create.
@@ -255,10 +255,10 @@ Create an instance: `local detect = client:Detect(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ai_probability` | `number` |  |
+| `aiProbability` | `number` |  |
 | `confidence` | `number` |  |
-| `human_probability` | `number` |  |
-| `is_ai` | `boolean` |  |
+| `humanProbability` | `number` |  |
+| `isAI` | `boolean` |  |
 | `text` | `string` |  |
 
 #### Example: Create

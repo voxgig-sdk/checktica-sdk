@@ -90,10 +90,10 @@ local detect = client:Detect(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_probability` | `number` | No |  |
+| `aiProbability` | `number` | No |  |
 | `confidence` | `number` | No |  |
-| `human_probability` | `number` | No |  |
-| `is_ai` | `boolean` | No |  |
+| `humanProbability` | `number` | No |  |
+| `isAI` | `boolean` | No |  |
 | `text` | `string` | Yes |  |
 
 ### Operations

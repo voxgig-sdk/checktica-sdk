@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Checktica SDK exists test
 
 import pytest
 from checktica_sdk import CheckticaSDK

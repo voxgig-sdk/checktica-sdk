@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ CheckticaUtility.registrar = ->(u) {
   u.prepare_params = CheckticaUtilities::PrepareParams
   u.prepare_path = CheckticaUtilities::PreparePath
   u.prepare_query = CheckticaUtilities::PrepareQuery
+  u.graphql_body = CheckticaUtilities::GraphqlBody
+  u.graphql_errors = CheckticaUtilities::GraphqlErrors
   u.result_basic = CheckticaUtilities::ResultBasic
   u.result_body = CheckticaUtilities::ResultBody
   u.result_headers = CheckticaUtilities::ResultHeaders

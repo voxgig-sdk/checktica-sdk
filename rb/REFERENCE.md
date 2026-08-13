@@ -93,10 +93,10 @@ detect = client.Detect
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_probability` | `Float` | No |  |
+| `aiProbability` | `Float` | No |  |
 | `confidence` | `Float` | No |  |
-| `human_probability` | `Float` | No |  |
-| `is_ai` | `Boolean` | No |  |
+| `humanProbability` | `Float` | No |  |
+| `isAI` | `Boolean` | No |  |
 | `text` | `String` | Yes |  |
 
 ### Operations

@@ -10,50 +10,50 @@
 
 # Detect entity data model.
 #
-# @!attribute [rw] ai_probability
+# @!attribute [rw] aiProbability
 #   @return [Float, nil]
 #
 # @!attribute [rw] confidence
 #   @return [Float, nil]
 #
-# @!attribute [rw] human_probability
+# @!attribute [rw] humanProbability
 #   @return [Float, nil]
 #
-# @!attribute [rw] is_ai
+# @!attribute [rw] isAI
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] text
 #   @return [String]
 Detect = Struct.new(
-  :ai_probability,
+  :aiProbability,
   :confidence,
-  :human_probability,
-  :is_ai,
+  :humanProbability,
+  :isAI,
   :text,
   keyword_init: true
 )
 
 # Request payload for Detect#create.
 #
-# @!attribute [rw] ai_probability
+# @!attribute [rw] aiProbability
 #   @return [Float, nil]
 #
 # @!attribute [rw] confidence
 #   @return [Float, nil]
 #
-# @!attribute [rw] human_probability
+# @!attribute [rw] humanProbability
 #   @return [Float, nil]
 #
-# @!attribute [rw] is_ai
+# @!attribute [rw] isAI
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] text
 #   @return [String]
 DetectCreateData = Struct.new(
-  :ai_probability,
+  :aiProbability,
   :confidence,
-  :human_probability,
-  :is_ai,
+  :humanProbability,
+  :isAI,
   :text,
   keyword_init: true
 )

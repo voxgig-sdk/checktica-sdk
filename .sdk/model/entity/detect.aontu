@@ -6,7 +6,7 @@ main: kit: entity: detect: {
 
   fields: [
     {
-      name: "ai_probability"
+      name: "aiProbability"
       req: false
       type: "`$NUMBER`"
     }
@@ -16,12 +16,12 @@ main: kit: entity: detect: {
       type: "`$NUMBER`"
     }
     {
-      name: "human_probability"
+      name: "humanProbability"
       req: false
       type: "`$NUMBER`"
     }
     {
-      name: "is_ai"
+      name: "isAI"
       req: false
       type: "`$BOOLEAN`"
     }

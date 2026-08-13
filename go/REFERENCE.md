@@ -98,10 +98,10 @@ fmt.Println(detect.GetName()) // "detect"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ai_probability` | `float64` | No |  |
+| `aiProbability` | `float64` | No |  |
 | `confidence` | `float64` | No |  |
-| `human_probability` | `float64` | No |  |
-| `is_ai` | `bool` | No |  |
+| `humanProbability` | `float64` | No |  |
+| `isAI` | `bool` | No |  |
 | `text` | `string` | Yes |  |
 
 ### Operations

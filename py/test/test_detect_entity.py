@@ -6,9 +6,9 @@ import time
 
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from checktica_sdk.utility.voxgig_struct import voxgig_struct as vs
 from checktica_sdk import CheckticaSDK
-from core import helpers
+from checktica_sdk.core import helpers
 
 _TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 from test import runner
@@ -44,7 +44,7 @@ class TestDetectEntity:
         detect_ref01_data = helpers.to_map(vs.getprop(
             vs.getpath(setup["data"], "new.detect"), "detect_ref01"))
 
-        detect_ref01_data = helpers.to_map(detect_ref01_ent.create(detect_ref01_data, None))
+        detect_ref01_data = helpers.to_map(runner.entity_data(detect_ref01_ent.create(detect_ref01_data, None)))
         assert detect_ref01_data is not None
 
 

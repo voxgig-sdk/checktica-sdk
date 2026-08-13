@@ -36,7 +36,7 @@ const client = new CheckticaSDK()
 ### 4. Create, update, and remove
 
 ```ts
-// Create — returns the created Detect
+// Create — returns the created Detect ENTITY (.data() for the record)
 const created = await client.Detect().create({
   text: 'example_text',
 })
@@ -118,7 +118,8 @@ Create a mock client for unit testing — no server required:
 const client = CheckticaSDK.test()
 
 const detect = await client.Detect().create({ text: 'example_text' })
-// detect is a bare entity populated with mock response data
+// detect is the entity, populated with mock response data
+// — call detect.data() for the record itself
 console.log(detect)
 ```
 
@@ -281,10 +282,10 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `ai_probability` |  |
+| `aiProbability` |  |
 | `confidence` |  |
-| `human_probability` |  |
-| `is_ai` |  |
+| `humanProbability` |  |
+| `isAI` |  |
 | `text` |  |
 
 Operations: create.
@@ -310,10 +311,10 @@ Create an instance: `const detect = client.Detect()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ai_probability` | `number` |  |
+| `aiProbability` | `number` |  |
 | `confidence` | `number` |  |
-| `human_probability` | `number` |  |
-| `is_ai` | `boolean` |  |
+| `humanProbability` | `number` |  |
+| `isAI` | `boolean` |  |
 | `text` | `string` |  |
 
 #### Example: Create

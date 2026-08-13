@@ -41,7 +41,7 @@ describe("DetectEntity", function()
 
     local detect_ref01_data_result, err = detect_ref01_ent:create(detect_ref01_data, nil)
     assert.is_nil(err)
-    detect_ref01_data = helpers.to_map(detect_ref01_data_result)
+    detect_ref01_data = helpers.to_map(type(detect_ref01_data_result) == 'table' and detect_ref01_data_result.data_get and detect_ref01_data_result:data_get() or detect_ref01_data_result)
     assert.is_not_nil(detect_ref01_data)
 
   end)
