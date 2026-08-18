@@ -23,8 +23,8 @@ class CheckticaSDK:
         utility = CheckticaUtility()
         self._utility = utility
 
-        from checktica_sdk.config import make_config
-        config = make_config()
+        from checktica_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,

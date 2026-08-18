@@ -15,7 +15,7 @@ require_relative "../Checktica_sdk"
 module CheckticaFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = CheckticaConfig.make_config["feature"]
+    f = CheckticaConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

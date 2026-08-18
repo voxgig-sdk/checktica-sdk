@@ -28,7 +28,7 @@ class CheckticaSDK
     utility = CheckticaUtility.new
     @_utility = utility
 
-    config = CheckticaConfig.make_config
+    config = CheckticaConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

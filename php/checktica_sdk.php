@@ -40,7 +40,7 @@ class CheckticaSDK
         $utility = new CheckticaUtility();
         $this->_utility = $utility;
 
-        $config = CheckticaConfig::make_config();
+        $config = CheckticaConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
