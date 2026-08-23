@@ -98,11 +98,11 @@ fmt.Println(detect.GetName()) // "detect"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aiProbability` | `float64` | No |  |
-| `confidence` | `float64` | No |  |
-| `humanProbability` | `float64` | No |  |
-| `isAI` | `bool` | No |  |
-| `text` | `string` | Yes |  |
+| `aiProbability` | `float64` | No | Probability that the text is AI-generated (0-100) |
+| `confidence` | `float64` | No | Confidence score of the detection (0-1) |
+| `humanProbability` | `float64` | No | Probability that the text is human-written (0-100) |
+| `isAI` | `bool` | No | Indicates whether the text was identified as AI-generated |
+| `text` | `string` | Yes | The text to analyze for AI detection. |
 
 ### Operations
 

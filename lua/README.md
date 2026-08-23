@@ -226,11 +226,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `aiProbability` |  |
-| `confidence` |  |
-| `humanProbability` |  |
-| `isAI` |  |
-| `text` |  |
+| `aiProbability` | Probability that the text is AI-generated (0-100) |
+| `confidence` | Confidence score of the detection (0-1) |
+| `humanProbability` | Probability that the text is human-written (0-100) |
+| `isAI` | Indicates whether the text was identified as AI-generated |
+| `text` | The text to analyze for AI detection. |
 
 Operations: Create.
 
@@ -255,11 +255,11 @@ Create an instance: `local detect = client:Detect(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aiProbability` | `number` |  |
-| `confidence` | `number` |  |
-| `humanProbability` | `number` |  |
-| `isAI` | `boolean` |  |
-| `text` | `string` |  |
+| `aiProbability` | `number` | Probability that the text is AI-generated (0-100) |
+| `confidence` | `number` | Confidence score of the detection (0-1) |
+| `humanProbability` | `number` | Probability that the text is human-written (0-100) |
+| `isAI` | `boolean` | Indicates whether the text was identified as AI-generated |
+| `text` | `string` | The text to analyze for AI detection. |
 
 #### Example: Create
 

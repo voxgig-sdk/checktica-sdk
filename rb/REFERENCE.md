@@ -93,11 +93,11 @@ detect = client.Detect
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aiProbability` | `Float` | No |  |
-| `confidence` | `Float` | No |  |
-| `humanProbability` | `Float` | No |  |
-| `isAI` | `Boolean` | No |  |
-| `text` | `String` | Yes |  |
+| `aiProbability` | `Float` | No | Probability that the text is AI-generated (0-100) |
+| `confidence` | `Float` | No | Confidence score of the detection (0-1) |
+| `humanProbability` | `Float` | No | Probability that the text is human-written (0-100) |
+| `isAI` | `Boolean` | No | Indicates whether the text was identified as AI-generated |
+| `text` | `String` | Yes | The text to analyze for AI detection. |
 
 ### Operations
 

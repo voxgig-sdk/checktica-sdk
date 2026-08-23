@@ -90,11 +90,11 @@ local detect = client:Detect(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aiProbability` | `number` | No |  |
-| `confidence` | `number` | No |  |
-| `humanProbability` | `number` | No |  |
-| `isAI` | `boolean` | No |  |
-| `text` | `string` | Yes |  |
+| `aiProbability` | `number` | No | Probability that the text is AI-generated (0-100) |
+| `confidence` | `number` | No | Confidence score of the detection (0-1) |
+| `humanProbability` | `number` | No | Probability that the text is human-written (0-100) |
+| `isAI` | `boolean` | No | Indicates whether the text was identified as AI-generated |
+| `text` | `string` | Yes | The text to analyze for AI detection. |
 
 ### Operations
 

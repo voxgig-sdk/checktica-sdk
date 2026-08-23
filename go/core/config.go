@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Checktica",
+			"slug": "checktica",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,23 +36,28 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "aiProbability",
+						"short": "Probability that the text is AI-generated (0-100)",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "confidence",
+						"short": "Confidence score of the detection (0-1)",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "humanProbability",
+						"short": "Probability that the text is human-written (0-100)",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "isAI",
+						"short": "Indicates whether the text was identified as AI-generated",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "text",
 						"req": true,
+						"short": "The text to analyze for AI detection.",
 						"type": "`$STRING`",
 					},
 				},

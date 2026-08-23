@@ -6,7 +6,7 @@ The Golang SDK for the Checktica API — an entity-oriented client using standar
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Detect(nil)` — each with the same small set of operations (`Create`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,11 +258,11 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"aiProbability"` |  |
-| `"confidence"` |  |
-| `"humanProbability"` |  |
-| `"isAI"` |  |
-| `"text"` |  |
+| `"aiProbability"` | Probability that the text is AI-generated (0-100) |
+| `"confidence"` | Confidence score of the detection (0-1) |
+| `"humanProbability"` | Probability that the text is human-written (0-100) |
+| `"isAI"` | Indicates whether the text was identified as AI-generated |
+| `"text"` | The text to analyze for AI detection. |
 
 Operations: Create.
 
@@ -287,11 +287,11 @@ Create an instance: `detect := client.Detect(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aiProbability` | `float64` |  |
-| `confidence` | `float64` |  |
-| `humanProbability` | `float64` |  |
-| `isAI` | `bool` |  |
-| `text` | `string` |  |
+| `aiProbability` | `float64` | Probability that the text is AI-generated (0-100) |
+| `confidence` | `float64` | Confidence score of the detection (0-1) |
+| `humanProbability` | `float64` | Probability that the text is human-written (0-100) |
+| `isAI` | `bool` | Indicates whether the text was identified as AI-generated |
+| `text` | `string` | The text to analyze for AI detection. |
 
 #### Example: Create
 

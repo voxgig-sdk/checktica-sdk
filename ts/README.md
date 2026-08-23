@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -282,11 +282,11 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `aiProbability` |  |
-| `confidence` |  |
-| `humanProbability` |  |
-| `isAI` |  |
-| `text` |  |
+| `aiProbability` | Probability that the text is AI-generated (0-100) |
+| `confidence` | Confidence score of the detection (0-1) |
+| `humanProbability` | Probability that the text is human-written (0-100) |
+| `isAI` | Indicates whether the text was identified as AI-generated |
+| `text` | The text to analyze for AI detection. |
 
 Operations: create.
 
@@ -311,11 +311,11 @@ Create an instance: `const detect = client.Detect()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aiProbability` | `number` |  |
-| `confidence` | `number` |  |
-| `humanProbability` | `number` |  |
-| `isAI` | `boolean` |  |
-| `text` | `string` |  |
+| `aiProbability` | `number` | Probability that the text is AI-generated (0-100) |
+| `confidence` | `number` | Confidence score of the detection (0-1) |
+| `humanProbability` | `number` | Probability that the text is human-written (0-100) |
+| `isAI` | `boolean` | Indicates whether the text was identified as AI-generated |
+| `text` | `string` | The text to analyze for AI detection. |
 
 #### Example: Create
 

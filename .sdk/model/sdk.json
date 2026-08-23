@@ -36,30 +36,35 @@
               "active": true,
               "name": "aiProbability",
               "req": false,
+              "short": "Probability that the text is AI-generated (0-100)",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "confidence",
               "req": false,
+              "short": "Confidence score of the detection (0-1)",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "humanProbability",
               "req": false,
+              "short": "Probability that the text is human-written (0-100)",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "isAI",
               "req": false,
+              "short": "Indicates whether the text was identified as AI-generated",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "text",
               "req": true,
+              "short": "The text to analyze for AI detection.",
               "type": "`$STRING`"
             }
           ],

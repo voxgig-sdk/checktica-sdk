@@ -241,11 +241,11 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `aiProbability` |  |
-| `confidence` |  |
-| `humanProbability` |  |
-| `isAI` |  |
-| `text` |  |
+| `aiProbability` | Probability that the text is AI-generated (0-100) |
+| `confidence` | Confidence score of the detection (0-1) |
+| `humanProbability` | Probability that the text is human-written (0-100) |
+| `isAI` | Indicates whether the text was identified as AI-generated |
+| `text` | The text to analyze for AI detection. |
 
 Operations: Create.
 
@@ -270,11 +270,11 @@ Create an instance: `$detect = $client->Detect();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aiProbability` | `float` |  |
-| `confidence` | `float` |  |
-| `humanProbability` | `float` |  |
-| `isAI` | `bool` |  |
-| `text` | `string` |  |
+| `aiProbability` | `float` | Probability that the text is AI-generated (0-100) |
+| `confidence` | `float` | Confidence score of the detection (0-1) |
+| `humanProbability` | `float` | Probability that the text is human-written (0-100) |
+| `isAI` | `bool` | Indicates whether the text was identified as AI-generated |
+| `text` | `string` | The text to analyze for AI detection. |
 
 #### Example: Create
 

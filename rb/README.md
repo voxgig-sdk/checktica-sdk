@@ -231,11 +231,11 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `aiProbability` |  |
-| `confidence` |  |
-| `humanProbability` |  |
-| `isAI` |  |
-| `text` |  |
+| `aiProbability` | Probability that the text is AI-generated (0-100) |
+| `confidence` | Confidence score of the detection (0-1) |
+| `humanProbability` | Probability that the text is human-written (0-100) |
+| `isAI` | Indicates whether the text was identified as AI-generated |
+| `text` | The text to analyze for AI detection. |
 
 Operations: Create.
 
@@ -260,11 +260,11 @@ Create an instance: `detect = client.Detect`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aiProbability` | `Float` |  |
-| `confidence` | `Float` |  |
-| `humanProbability` | `Float` |  |
-| `isAI` | `Boolean` |  |
-| `text` | `String` |  |
+| `aiProbability` | `Float` | Probability that the text is AI-generated (0-100) |
+| `confidence` | `Float` | Confidence score of the detection (0-1) |
+| `humanProbability` | `Float` | Probability that the text is human-written (0-100) |
+| `isAI` | `Boolean` | Indicates whether the text was identified as AI-generated |
+| `text` | `String` | The text to analyze for AI detection. |
 
 #### Example: Create
 

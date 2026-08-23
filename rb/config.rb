@@ -19,6 +19,9 @@ module CheckticaConfig
     {
       "main" => {
         "name" => "Checktica",
+        "slug" => "checktica",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -41,23 +44,28 @@ module CheckticaConfig
           "fields" => [
             {
               "name" => "aiProbability",
+              "short" => "Probability that the text is AI-generated (0-100)",
               "type" => "`$NUMBER`",
             },
             {
               "name" => "confidence",
+              "short" => "Confidence score of the detection (0-1)",
               "type" => "`$NUMBER`",
             },
             {
               "name" => "humanProbability",
+              "short" => "Probability that the text is human-written (0-100)",
               "type" => "`$NUMBER`",
             },
             {
               "name" => "isAI",
+              "short" => "Indicates whether the text was identified as AI-generated",
               "type" => "`$BOOLEAN`",
             },
             {
               "name" => "text",
               "req" => true,
+              "short" => "The text to analyze for AI detection.",
               "type" => "`$STRING`",
             },
           ],
