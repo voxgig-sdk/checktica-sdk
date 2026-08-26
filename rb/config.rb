@@ -28,6 +28,7 @@ module CheckticaConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
