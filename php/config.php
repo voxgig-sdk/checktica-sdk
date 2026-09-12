@@ -58,16 +58,19 @@ class CheckticaConfig
         'detect' => [
           'fields' => [
             [
+              'format' => 'float',
               'name' => 'aiProbability',
               'short' => 'Probability that the text is AI-generated (0-100)',
               'type' => '`$NUMBER`',
             ],
             [
+              'format' => 'float',
               'name' => 'confidence',
               'short' => 'Confidence score of the detection (0-1)',
               'type' => '`$NUMBER`',
             ],
             [
+              'format' => 'float',
               'name' => 'humanProbability',
               'short' => 'Probability that the text is human-written (0-100)',
               'type' => '`$NUMBER`',
@@ -95,13 +98,18 @@ class CheckticaConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/detect',
-                  'parts' => [
-                    'detect',
+                  'segments' => [
+                    [
+                      'lit' => 'detect',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'detect',
                   ],
                 ],
               ],

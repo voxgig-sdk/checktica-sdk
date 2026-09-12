@@ -6,18 +6,21 @@ main: kit: entity: detect: {
 
   fields: [
     {
+      format: "float"
       name: "aiProbability"
       req: false
       short: "Probability that the text is AI-generated (0-100)"
       type: "`$NUMBER`"
     }
     {
+      format: "float"
       name: "confidence"
       req: false
       short: "Confidence score of the detection (0-1)"
       type: "`$NUMBER`"
     }
     {
+      format: "float"
       name: "humanProbability"
       req: false
       short: "Probability that the text is human-written (0-100)"
@@ -45,8 +48,10 @@ main: kit: entity: detect: {
         {
           method: "POST"
           orig: "/detect"
-          parts: [
-            "detect"
+          segments: [
+            {
+              lit: "detect"
+            }
           ]
           transform: {
             req: "`reqdata`"
