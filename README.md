@@ -107,7 +107,7 @@ local result, err = client:Detect():create({ text = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/checktica` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/releases) |
+| TypeScript | `@voxgig-sdk/checktica-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/releases) |
 | Python | `voxgig-sdk-checktica` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/releases) |
 | PHP | `voxgig-sdk/checktica` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/checktica-sdk/go` | `go get github.com/voxgig-sdk/checktica-sdk/go@latest` |
@@ -121,7 +121,7 @@ local result, err = client:Detect():create({ text = "example" })
 ### TypeScript
 
 ```ts
-import { CheckticaSDK } from '@voxgig-sdk/checktica'
+import { CheckticaSDK } from '@voxgig-sdk/checktica-sdk'
 
 const client = new CheckticaSDK()
 

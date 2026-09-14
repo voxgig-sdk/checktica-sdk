@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { CheckticaSDK } from '@voxgig-sdk/checktica'
+import { CheckticaSDK } from '@voxgig-sdk/checktica-sdk'
 
 const client = new CheckticaSDK()
 ```
@@ -408,7 +408,7 @@ checktica/
 Import the SDK from the package root:
 
 ```ts
-import { CheckticaSDK } from '@voxgig-sdk/checktica'
+import { CheckticaSDK } from '@voxgig-sdk/checktica-sdk'
 ```
 
 ### Entity state
