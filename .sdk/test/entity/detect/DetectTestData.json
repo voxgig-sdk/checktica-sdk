@@ -37,5 +37,119 @@
         "text": "scc"
       }
     }
+  },
+  "requests": {
+    "POST /detect": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "detectAiText",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "text": {
+                    "description": "The text to analyze for AI detection. No length limitations.",
+                    "example": "This is a sample text that needs to be analyzed to determine if it was written by AI or a human.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "aiProbability": 99.2,
+                  "confidence": 0.99,
+                  "humanProbability": 0.8,
+                  "isAI": true
+                },
+                "schema": {
+                  "properties": {
+                    "aiProbability": {
+                      "description": "Probability that the text is AI-generated (0-100)",
+                      "format": "float",
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "confidence": {
+                      "description": "Confidence score of the detection (0-1)",
+                      "format": "float",
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "humanProbability": {
+                      "description": "Probability that the text is human-written (0-100)",
+                      "format": "float",
+                      "maximum": 100,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "isAI": {
+                      "description": "Indicates whether the text was identified as AI-generated",
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful detection response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "Text field is required"
+                },
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message describing what went wrong",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request - invalid input"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "An internal error occurred while processing your request"
+                },
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

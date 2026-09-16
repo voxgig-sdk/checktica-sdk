@@ -1,12 +1,18 @@
 # Checktica SDK feature factory
 
 from checktica_sdk.feature.base_feature import CheckticaBaseFeature
+from checktica_sdk.feature.ratelimit_feature import CheckticaRatelimitFeature
+from checktica_sdk.feature.retry_feature import CheckticaRetryFeature
 from checktica_sdk.feature.test_feature import CheckticaTestFeature
+from checktica_sdk.feature.timeout_feature import CheckticaTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: CheckticaBaseFeature(),
+    "ratelimit": lambda: CheckticaRatelimitFeature(),
+    "retry": lambda: CheckticaRetryFeature(),
     "test": lambda: CheckticaTestFeature(),
+    "timeout": lambda: CheckticaTimeoutFeature(),
 }
 
 
