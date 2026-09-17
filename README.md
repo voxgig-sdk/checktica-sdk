@@ -107,12 +107,12 @@ local result, err = client:Detect():create({ text = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/checktica-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/releases) |
-| Python | `voxgig-sdk-checktica` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/releases) |
-| PHP | `voxgig-sdk/checktica` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/releases) |
+| TypeScript | `@voxgig-sdk/checktica-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/tags) |
+| Python | `voxgig-sdk-checktica` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/tags) |
+| PHP | `voxgig-sdk/checktica` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/checktica-sdk/go` | `go get github.com/voxgig-sdk/checktica-sdk/go@latest` |
-| Ruby | `voxgig-sdk-checktica` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/releases) |
-| Lua | `voxgig-sdk-checktica` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/releases) |
+| Ruby | `voxgig-sdk-checktica` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/tags) |
+| Lua | `voxgig-sdk-checktica` | publish pending — [install from git tag](https://github.com/voxgig-sdk/checktica-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/checktica-sdk/go-cli` | `go install github.com/voxgig-sdk/checktica-sdk/go-cli/cmd/checktica@latest` |
 | Go MCP server | `github.com/voxgig-sdk/checktica-sdk/go-mcp` | `go get github.com/voxgig-sdk/checktica-sdk/go-mcp@latest` |
 
